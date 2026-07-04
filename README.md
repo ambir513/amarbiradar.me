@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# amarbiradar.me
+
+<p align="left">
+	<a href="https://nextjs.org/">
+		<img src="https://img.shields.io/badge/Next.js-16.2.7-black?style=for-the-badge&logo=nextdotjs" alt="Next.js" />
+	</a>
+	<a href="https://www.typescriptlang.org/">
+		<img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+	</a>
+	<a href="https://react.dev/">
+		<img src="https://img.shields.io/badge/React-19.2.4-149ECA?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+	</a>
+	<a href="./LICENSE">
+		<img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="License" />
+	</a>
+	<a href="./CONTRIBUTING.md">
+		<img src="https://img.shields.io/badge/Contributions-Welcome-brightgreen?style=for-the-badge" alt="Contributions welcome" />
+	</a>
+</p>
+
+A personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and reusable UI components. The project includes a landing page, GitHub activity visualizations, and a resume experience.
+
+## Project Overview
+
+- Modern portfolio layout with reusable sections and shared UI primitives
+- GitHub activity and contribution display components
+- Resume page and PDF preview experience
+- Responsive design with theme support
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Radix UI and shadcn-style components
+- React Day Picker
+- Recharts
+
+## Project Structure
+
+```text
+.
+├── public/
+│   └── assets/
+│       └── brand/
+├── src/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── resume/
+│   ├── components/
+│   │   ├── github/
+│   │   ├── landing/
+│   │   ├── providers/
+│   │   ├── resume/
+│   │   ├── svg/
+│   │   └── ui/
+│   ├── data/
+│   ├── hooks/
+│   └── lib/
+├── CONTRIBUTING.md
+└── README.md
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20 or newer
+- npm
+
+### Install and Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - start the local development server
+- `npm run build` - create a production build
+- `npm run start` - start the production server
+- `npm run lint` - run ESLint checks
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome. Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is ready to deploy on Vercel or any platform that supports Next.js applications.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
