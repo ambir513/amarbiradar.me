@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     canonical: "https://amarbiradar.me",
   },
   verification: {
-    google: "YOUR_DATA",
+    google: "TWW6us4BMLQxudfjpBQDZXAQ_TrRX8EnO28axNdMufg",
   },
   metadataBase: new URL("https://amarbiradar.me"),
 };
