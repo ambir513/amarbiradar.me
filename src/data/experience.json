@@ -1,0 +1,93 @@
+{
+  "experience": [
+    {
+      "company": "Freelancing",
+      "role": "Full Stack (SaaS, MVP) Developer",
+      "startDate": "May 2025",
+      "endDate": "Present",
+      "duration": "1 year",
+      "image": "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-18/256/1950.png",
+      "description": [
+        {
+          "point": "Built and deployed scalable SaaS applications and MVPs for startups and businesses using modern full-stack technologies."
+        },
+        {
+          "point": "Developed responsive and SEO-friendly web applications with optimized performance and excellent user experience."
+        },
+        {
+          "point": "Integrated authentication, payment gateways, databases, cloud storage, and third-party APIs to deliver complete production-ready solutions."
+        }
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "PostgreSQL",
+        "Prisma",
+        "Drizzle ORM",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Redux Toolkit",
+        "TanStack Query",
+        "tRPC",
+        "REST API",
+        "GraphQL",
+        "Firebase",
+        "Supabase",
+        "Cloudinary",
+        "AWS S3",
+        "Redis",
+        "Docker",
+        "Git",
+        "GitHub",
+        "Vercel",
+        "Railway",
+        "Render",
+        "JWT",
+        "OAuth",
+        "Zod",
+        "React Hook Form"
+      ]
+    },
+    {
+      "company": "I-Digitech Skills & Solutions",
+      "role": "SDE-1 (MERN Stack) Intern",
+      "startDate": "Nov 2025",
+      "endDate": "Jan 2026",
+      "duration": "3 months",
+      "location": "Mumbai, India (On-Site)",
+      "image": "https://media.licdn.com/dms/image/v2/D560BAQEKvzWWZov4gw/company-logo_200_200/B56ZWzGKyXGoAI-/0/1742466494132?e=1783555200&v=beta&t=iQK6FkQ__m4bvxe4nWgXh1aqmt_TFhViwDaUALu7egI",
+      "description": [
+        {
+          "point": "Developed and maintained full-stack web applications using the MERN stack, improving application performance and user experience."
+        },
+        {
+          "point": "Built RESTful APIs and integrated MongoDB databases, enabling efficient data management and seamless frontend-backend communication."
+        },
+        {
+          "point": "Collaborated with the development team to implement responsive UI components, fix bugs, and deploy applications following industry best practices."
+        }
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "REST API",
+        "Tailwind CSS",
+        "Redux Toolkit",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Figma",
+        "Vercel"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "projects": [
+    {
+      "name": "ytcn",
+      "logo": "/images/ethnicelegance.png",
+      "slug": "ethnic-elegance",
+      "link": "https://ytcn.dev",
+      "description": "A headless, zero-branding YouTube player built on shadcn/ui for React and Next.js that gives developers complete control over the video experience",
+      "tech": ["Next.js", "TailwindCSS", "Shadcn UI", "21st dev", "Clerk Auth"],
+      "type": "Company Website",
+      "landing": true,
+      "github": "https://github.com/ambir513/ytcn",
+      "isDisabled": false
+    },
+    {
+      "name": "Ethnic Elegance",
+      "logo": "/images/ethnicelegance.png",
+      "slug": "ethnic-elegance",
+      "link": "https://ethnicelegance.store",
+      "description": "Ethnic Elegance is an e-commerce platform for premium Indian women's wear, combining artisan craftsmanship with a seamless, modern shopping experience.",
+      "tech": ["Next.js", "TailwindCSS", "Shadcn UI", "21st dev", "Clerk Auth"],
+      "type": "Company Website",
+      "landing": true,
+      "github": "https://github.com/ethnicelegance/ethnicelegance",
+      "isDisabled": true
+    },
+    {
+      "name": "Fellow Notes",
+      "logo": "/images/fellownotes.png",
+      "slug": "fellow-notes",
+      "link": "https://fellownotes.app",
+      "github": "https://github.com/ambir513/fellownotes",
+      "description": "An all-in-one, AI-driven study platform built to help students collaborate and access exam-ready resources efficiently",
+      "tech": ["Next.js", "TailwindCSS", "Shadcn UI", "21st dev", "Clerk Auth"],
+      "type": "Company Website",
+      "landing": true,
+      "isDisabled": true
+    },
+
+    {
+      "name": "Mahi Events",
+      "logo": "/images/mahievent.png",
+      "slug": "mahi-events",
+      "link": "https://mahievent.in",
+      "description": "A corporate platform for a premier Mumbai event management agency showcasing B2B and retail marketing solutions",
+      "tech": ["Next.js", "TailwindCSS", "Shadcn UI", "21st dev", "Clerk Auth"],
+      "type": "Company Website",
+      "landing": true,
+      "github": "https://github.com/ambir513/mahi.event",
+      "isDisabled": true
+    },
+    {
+      "name": "VB Enterprises",
+      "logo": "/images/vb.png",
+      "slug": "vb-enterprises",
+      "link": "https://vbenterprises.work",
+      "description": "A responsive corporate portfolio website developed for an interior civil contracting firm to showcase their services, project gallery, and client testimonials.",
+      "tech": ["Next.js", "TailwindCSS", "Shadcn UI", "21st dev", "Clerk Auth"],
+      "type": "Company Website",
+      "landing": true,
+      "github": "https://github.com/ambir513/vbenterprises",
+      "isDisabled": false
+    },
+    {
+      "name": "The DevTinder",
+      "logo": "/images/dev.png",
+      "slug": "the-dev-tinder",
+      "link": "https://thedevtinder.xyz",
+      "description": "Inspired by the Tinder platform. Designed to foster professional connections among developers",
+      "tech": ["Next.js", "TailwindCSS", "Framer Motion"],
+      "type": "Web App",
+      "landing": false,
+      "github": "https://github.com/ambir513/devTinder-web",
+      "isDisabled": false
+    },
+
+    {
+      "name": "Youtube Clone",
+      "logo": "/images/yt.png",
+      "slug": "youtube-clone",
+      "link": "https://youtube.amarbiradar.me",
+      "description": "A fully responsive YouTube clone built to replicate the core video streaming experience, featuring real-time video feeds, dynamic search capabilities, and a seamless user interface.",
+      "tech": ["React", "Clerk", "Resend API"],
+      "type": "SaaS Tool",
+      "landing": false,
+      "github": "https://github.com/ambir513/YouTube-clone",
+      "isDisabled": false
+    }
+  ]
+}
