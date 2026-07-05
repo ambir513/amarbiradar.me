@@ -7,95 +7,184 @@ import { Experience } from "@/components/landing/experience";
 import { Footer } from "@/components/landing/footer";
 import Script from "next/script";
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://amarbiradar.me/#person",
-    name: "Amar Biradar",
-    alternateName: "AmBir",
-    url: "https://amarbiradar.me",
-    image: "https://amarbiradar.me/brand/logo.png",
-    jobTitle: "Full Stack Developer",
-    description:
-      "Full Stack Developer specializing in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, Docker, and scalable web applications.",
-    email: "mailto:amarbiradar147@gmail.com",
-    nationality: "Indian",
-    knowsLanguage: ["English", "Hindi", "Marathi", "Kannada"],
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "Vidyavardhini's Annasaheb Vartak College",
+const BASE_URL = "https://amarbiradar.me";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: "Amar Biradar",
+      description:
+        "Official portfolio of Amar Biradar, Full Stack Software Developer.",
+      inLanguage: "en-IN",
+      publisher: {
+        "@id": `${BASE_URL}/#person`,
+      },
     },
-    knowsAbout: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "JavaScript",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "MongoDB",
-      "AWS",
-      "Docker",
-      "Tailwind CSS",
-      "tRPC",
-      "REST APIs",
-      "Cloudinary",
-      "Software Architecture",
-      "Full Stack Development",
-    ],
-    sameAs: [
-      "https://github.com/ambir513",
-      "https://www.linkedin.com/in/ambir513",
-      "https://x.com/ambir513",
-      "https://www.instagram.com/ambir513",
-      "https://www.youtube.com/@ambir513",
-    ],
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": "https://amarbiradar.me/#website",
-    url: "https://amarbiradar.me",
-    name: "Amar Biradar",
-    description: "Official portfolio of Amar Biradar.",
-    publisher: {
-      "@id": "https://amarbiradar.me/#person",
+
+    {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Amar Biradar",
+      givenName: "Amar",
+      familyName: "Biradar",
+      alternateName: ["AmBir", "ambir513"],
+
+      url: BASE_URL,
+
+      image: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/brand/logo.png`,
+      },
+
+      email: "mailto:amarbiradar147@gmail.com",
+
+      nationality: "Indian",
+
+      jobTitle: "Full Stack Software Developer",
+
+      description:
+        "Full Stack Software Developer specializing in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, Docker, scalable SaaS platforms, cloud infrastructure, and modern web applications.",
+
+      homeLocation: {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Mumbai",
+          addressRegion: "Maharashtra",
+          addressCountry: "IN",
+        },
+      },
+
+      worksFor: {
+        "@type": "Organization",
+        name: "Freelance",
+      },
+
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Full Stack Software Developer",
+      },
+
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Vidyavardhini's Annasaheb Vartak College",
+      },
+
+      knowsLanguage: ["English", "Hindi", "Marathi", "Kannada"],
+
+      knowsAbout: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "AWS",
+        "Docker",
+        "Tailwind CSS",
+        "REST APIs",
+        "Authentication",
+        "JWT",
+        "Cloudinary",
+        "System Design",
+        "Software Architecture",
+        "Performance Optimization",
+        "Full Stack Development",
+        "Frontend Development",
+        "Backend Development",
+        "SaaS Development",
+      ],
+
+      sameAs: [
+        "https://github.com/ambir513",
+        "https://www.linkedin.com/in/ambir513",
+        "https://x.com/ambir513",
+        "https://www.instagram.com/ambir513",
+        "https://www.youtube.com/@ambir513",
+      ],
+
+      subjectOf: {
+        "@type": "DigitalDocument",
+        "@id": `${BASE_URL}/assets/resume.pdf`,
+        url: `${BASE_URL}/assets/resume.pdf`,
+        name: "Amar Biradar Resume",
+        encodingFormat: "application/pdf",
+      },
     },
-    inLanguage: "en-IN",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://amarbiradar.me/#webpage",
-    url: "https://amarbiradar.me",
-    name: "Amar Biradar | Full Stack Developer",
-    description:
-      "Portfolio showcasing projects, experience, skills, and resume of Amar Biradar.",
-    inLanguage: "en-IN",
-    isPartOf: {
-      "@id": "https://amarbiradar.me/#website",
+
+    {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/#webpage`,
+      url: BASE_URL,
+      name: "Amar Biradar | Full Stack Software Developer",
+      description:
+        "Official portfolio of Amar Biradar showcasing projects, professional experience, technical skills, resume, GitHub activity, and contact information.",
+
+      inLanguage: "en-IN",
+
+      isPartOf: {
+        "@id": `${BASE_URL}/#website`,
+      },
+
+      about: {
+        "@id": `${BASE_URL}/#person`,
+      },
+
+      mainEntity: {
+        "@id": `${BASE_URL}/#person`,
+      },
+
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/brand/og.png`,
+      },
+
+      breadcrumb: {
+        "@id": `${BASE_URL}/#breadcrumb`,
+      },
     },
-    about: {
-      "@id": "https://amarbiradar.me/#person",
+
+    {
+      "@type": "ProfilePage",
+      "@id": `${BASE_URL}/#profile`,
+      url: BASE_URL,
+
+      isPartOf: {
+        "@id": `${BASE_URL}/#website`,
+      },
+
+      about: {
+        "@id": `${BASE_URL}/#person`,
+      },
+
+      mainEntity: {
+        "@id": `${BASE_URL}/#person`,
+      },
+
+      inLanguage: "en-IN",
     },
-    mainEntity: {
-      "@id": "https://amarbiradar.me/#person",
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${BASE_URL}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+      ],
     },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "@id": "https://amarbiradar.me/#profile",
-    url: "https://amarbiradar.me",
-    mainEntity: {
-      "@id": "https://amarbiradar.me/#person",
-    },
-    isPartOf: {
-      "@id": "https://amarbiradar.me/#website",
-    },
-  },
-];
+  ],
+};
 
 export default function Home() {
   return (

@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: BASE_URL,
             lastModified,
-            changeFrequency: "daily",
+            changeFrequency: "weekly",
             priority: 1,
         },
         {
@@ -18,5 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "monthly",
             priority: 0.9,
         },
-    ] satisfies MetadataRoute.Sitemap;
+        {
+            url: `${BASE_URL}/assets/resume.pdf`,
+            lastModified,
+            changeFrequency: "yearly",
+            priority: 0.7,
+        },
+    ];
 }

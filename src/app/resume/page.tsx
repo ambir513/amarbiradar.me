@@ -5,12 +5,17 @@ import { Footer } from "@/components/landing/footer";
 import type { Metadata } from "next";
 import Script from "next/script";
 
+const BASE_URL = "https://amarbiradar.me";
+
 export const metadata: Metadata = {
   title: "Resume",
   description:
     "Resume of Amar Biradar, Full Stack Developer specializing in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, Docker, and scalable web applications.",
   alternates: {
     canonical: "https://amarbiradar.me/resume",
+    types: {
+      "application/pdf": "https://amarbiradar.me/assets/resume.pdf",
+    },
   },
   robots: {
     index: true,
@@ -42,67 +47,204 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "@id": "https://amarbiradar.me/resume#profile",
-  url: "https://amarbiradar.me/resume",
-  name: "Resume | Amar Biradar",
-  mainEntity: {
-    "@type": "Person",
-    "@id": "https://amarbiradar.me/#person",
-    name: "Amar Biradar",
-    jobTitle: "Full Stack Developer",
-    url: "https://amarbiradar.me",
-    description:
-      "Full Stack Developer specializing in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, Docker, and scalable web applications.",
-    knowsAbout: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "AWS",
-      "Docker",
-    ],
-    sameAs: [
-      "https://github.com/ambir513",
-      "https://www.linkedin.com/in/ambir513",
-      "https://x.com/ambir513",
-      "https://www.instagram.com/ambir513",
-      "https://www.youtube.com/@ambir513",
-    ],
-    email: "mailto:amarbiradar147@gmail.com",
-    image: "https://amarbiradar.me/brand/logo.png",
-    worksFor: {
-      "@type": "Organization",
-      name: "Freelance",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: "Amar Biradar",
+      publisher: {
+        "@id": `${BASE_URL}/#person`,
+      },
+      inLanguage: "en-IN",
     },
-    hasOccupation: {
-      "@type": "Occupation",
-      name: "Full Stack Developer",
+
+    {
+      "@type": "ProfilePage",
+      "@id": `${BASE_URL}/resume#profile`,
+      url: `${BASE_URL}/resume`,
+      name: "Resume | Amar Biradar",
+      description:
+        "Resume, projects, experience, and technical skills of Amar Biradar.",
+      isPartOf: {
+        "@id": `${BASE_URL}/#website`,
+      },
+      about: {
+        "@id": `${BASE_URL}/#person`,
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/brand/resume-og.png`,
+      },
+      mainEntity: {
+        "@id": `${BASE_URL}/#person`,
+      },
+      inLanguage: "en-IN",
     },
-    homeLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Mumbai",
-        addressRegion: "Maharashtra",
-        addressCountry: "IN",
+
+    {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Amar Biradar",
+      givenName: "Amar",
+      familyName: "Biradar",
+      alternateName: ["AmBir", "ambir513"],
+      url: BASE_URL,
+      image: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/brand/logo.png`,
+      },
+      email: "mailto:amarbiradar147@gmail.com",
+
+      jobTitle: "Full Stack Software Developer",
+
+      description:
+        "Full Stack Software Developer specializing in Next.js, React, TypeScript, Node.js, PostgreSQL, AWS, Docker, scalable SaaS applications, cloud infrastructure, and modern web development.",
+
+      nationality: "Indian",
+      mainEntityOfPage: {
+        "@id": `${BASE_URL}/resume#profile`,
+      },
+
+      homeLocation: {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Mumbai",
+          addressRegion: "Maharashtra",
+          addressCountry: "IN",
+        },
+      },
+
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Vidyavardhini's Annasaheb Vartak College",
+      },
+
+      worksFor: {
+        "@type": "Organization",
+        name: "Freelance",
+      },
+
+      hasOccupation: {
+        "@type": "Occupation",
+        name: "Full Stack Software Developer",
+      },
+
+      knowsLanguage: ["English", "Hindi", "Marathi", "Kannada"],
+
+      knowsAbout: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "AWS",
+        "Docker",
+        "Tailwind CSS",
+        "REST APIs",
+        "Authentication",
+        "JWT",
+        "Cloudinary",
+        "CI/CD",
+        "Full Stack Development",
+        "Software Engineering",
+        "System Design",
+        "Web Performance",
+        "SaaS Development",
+      ],
+      identifier: [
+        {
+          "@type": "PropertyValue",
+          name: "GitHub Username",
+          value: "ambir513",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "X Username",
+          value: "ambir513",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "Instagram Username",
+          value: "ambir513",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "YouTube Username",
+          value: "@ambir513",
+        },
+        {
+          "@type": "PropertyValue",
+          name: "WhatsApp Username",
+          value: "@ambir513",
+        },
+      ],
+      sameAs: [
+        "https://github.com/ambir513",
+        "https://www.linkedin.com/in/ambir513",
+        "https://x.com/ambir513",
+        "https://www.instagram.com/ambir513",
+        "https://www.youtube.com/@ambir513",
+      ],
+
+      subjectOf: {
+        "@type": "DigitalDocument",
+        "@id": `${BASE_URL}/assets/resume.pdf`,
+        url: `${BASE_URL}/assets/resume.pdf`,
+        name: "Amar Biradar Resume",
+        encodingFormat: "application/pdf",
       },
     },
-    nationality: "Indian",
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "Vidyavardhini's Annasaheb Vartak College",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Vasai",
-        addressRegion: "Maharashtra",
-        addressCountry: "IN",
-      },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${BASE_URL}/resume#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: BASE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Resume",
+          item: `${BASE_URL}/resume`,
+        },
+      ],
     },
-    knowsLanguage: ["English", "Hindi", "Marathi", "Kannada"],
-  },
+
+    {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/resume#webpage`,
+      url: `${BASE_URL}/resume`,
+      name: "Resume | Amar Biradar",
+      description:
+        "Resume, projects, experience, and technical skills of Amar Biradar.",
+      isPartOf: {
+        "@id": `${BASE_URL}/#website`,
+      },
+      about: {
+        "@id": `${BASE_URL}/#person`,
+      },
+      breadcrumb: {
+        "@id": `${BASE_URL}/resume#breadcrumb`,
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/brand/resume-og.png`,
+      },
+      inLanguage: "en-IN",
+    },
+  ],
 };
+
 export default function ResumePageWrapper() {
   return (
     <>
