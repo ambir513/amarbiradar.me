@@ -169,6 +169,7 @@ export default async function BlogPage({ params }: Props) {
 
   const meta = parsePost(post);
 
+  console.log(meta);
   const readingTime = Number.parseInt(meta.timeToRead, 10) || 5;
 
   const image = meta.cover ?? `${BASE_URL}/brand/blog-og.png`;
