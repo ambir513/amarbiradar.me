@@ -59,12 +59,20 @@ export function Header() {
   const pathname = usePathname();
 
   const isResumePage = pathname.startsWith("/resume");
+  const isBlogPage = pathname.startsWith("/blog");
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md border-b border-border/40">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-end gap-4 px-4">
         <nav aria-label="Site navigation">
           {isResumePage ? (
+            <Button variant="secondary">
+              <Link href="/" className="flex items-center gap-1">
+                <ChevronLeft />
+                <span>Back to Portfolio</span>
+              </Link>
+            </Button>
+          ) : isBlogPage ? (
             <Button variant="secondary">
               <Link href="/" className="flex items-center gap-1">
                 <ChevronLeft />

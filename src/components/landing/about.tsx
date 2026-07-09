@@ -1,4 +1,3 @@
-"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -33,6 +32,7 @@ import {
   Vercel,
   Docker,
 } from "../svg/index";
+import LatestBlogs from "../blog/components/latest-blogs";
 
 const techStack = [
   React,
@@ -102,34 +102,39 @@ export function AboutSection() {
         </CardContent>
 
         <CardFooter className="flex flex-col gap-y-2 border-b-2 items-start px-4 sm:px-6 pb-3 pt-0">
-          <h1 className="text-md mt-3">Medium Blogs</h1>
-          <Button
-            variant="secondary"
-            className="w-full h-fit items-start px-4 py-3 whitespace-normal"
-            asChild
-          >
-            <Link
-              href="https://medium.com/@ambir513/understanding-rag-how-retrieval-augmented-generation-works-0bd4fbb02f72?utm_source=amarbiradar.me"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-col gap-y-1 w-full"
+          <div className="mt-4 space-y-3 w-full">
+            <h1 className="text-mdl font-medium mt-3">Medium Blogs</h1>
+            <Button
+              variant="secondary"
+              className="w-full h-fit items-start px-4 py-3 whitespace-normal"
+              asChild
             >
-              <span className="flex w-full items-start justify-between gap-2">
-                <span className="text-sm font-medium leading-snug text-left break-words min-w-0">
-                  Understanding RAG: How Retrieval Augmented Generation Works
+              <Link
+                href="https://medium.com/@ambir513/understanding-rag-how-retrieval-augmented-generation-works-0bd4fbb02f72?utm_source=amarbiradar.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col gap-y-1 w-full"
+              >
+                <span className="flex w-full items-start justify-between gap-2">
+                  <span className="text-sm font-medium leading-snug text-left break-words min-w-0">
+                    Understanding RAG: How Retrieval Augmented Generation Works
+                  </span>
+                  <ArrowUpRight
+                    className="mt-0.5 size-4 shrink-0 text-muted-foreground"
+                    aria-hidden="true"
+                  />
                 </span>
-                <ArrowUpRight
-                  className="mt-0.5 size-4 shrink-0 text-muted-foreground"
-                  aria-hidden="true"
-                />
-              </span>
-              {/* Description */}
-              <span className="text-xs text-muted-foreground text-left leading-relaxed break-words">
-                A step-by-step explanation of how AI retrieves relevant
-                knowledge before generating answers
-              </span>
-            </Link>
-          </Button>
+                {/* Description */}
+                <span className="text-xs text-muted-foreground text-left leading-relaxed break-words">
+                  A step-by-step explanation of how AI retrieves relevant
+                  knowledge before generating answers
+                </span>
+              </Link>
+            </Button>
+          </div>
+          <h3 className="text-md mt-3 font-semibold">Latest Blogs</h3>
+
+          <LatestBlogs />
         </CardFooter>
       </Card>
     </section>
