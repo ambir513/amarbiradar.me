@@ -55,12 +55,7 @@ export function ProjectCard({ data }: { data: Project }) {
       </CardHeader>
 
       <CardFooter className="flex justify-between items-center gap-2">
-        <Button
-          variant="secondary"
-          size="sm"
-          asChild={data.isDisabled ? false : true}
-          disabled={data.isDisabled}
-        >
+        <Button variant="secondary" size="sm" disabled={data.isDisabled}>
           <Link
             href={`${!data.isDisabled ? data.github : "#"}`}
             target="_blank"
@@ -74,15 +69,20 @@ export function ProjectCard({ data }: { data: Project }) {
         {displayLink && (
           <Button
             variant="link"
+            nativeButton={false}
             className="inline-flex items-center gap-0.5 text-sm font-medium text-blue-500 transition-colors hover:text-blue-400"
-            asChild
+            render={
+              <Link
+                href={data.link!}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
           >
-            <Link href={data.link!} target="_blank" rel="noopener noreferrer">
-              {displayLink.length > 20
-                ? displayLink.slice(0, 14) + "..."
-                : displayLink}
-              <ArrowUpRight className="size-3.5" />
-            </Link>
+            {displayLink.length > 20
+              ? displayLink.slice(0, 14) + "..."
+              : displayLink}
+            <ArrowUpRight className="size-3.5" />
           </Button>
         )}
       </CardFooter>

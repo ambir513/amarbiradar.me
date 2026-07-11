@@ -107,29 +107,30 @@ export function AboutSection() {
             <Button
               variant="secondary"
               className="w-full h-fit items-start px-4 py-3 whitespace-normal"
-              asChild
+              nativeButton={false}
+              render={
+                <Link
+                  href="https://medium.com/@ambir513/understanding-rag-how-retrieval-augmented-generation-works-0bd4fbb02f72?utm_source=amarbiradar.me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col gap-y-1 w-full"
+                />
+              }
             >
-              <Link
-                href="https://medium.com/@ambir513/understanding-rag-how-retrieval-augmented-generation-works-0bd4fbb02f72?utm_source=amarbiradar.me"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col gap-y-1 w-full"
-              >
-                <span className="flex w-full items-start justify-between gap-2">
-                  <span className="text-sm font-medium leading-snug text-left break-words min-w-0">
-                    Understanding RAG: How Retrieval Augmented Generation Works
-                  </span>
-                  <ArrowUpRight
-                    className="mt-0.5 size-4 shrink-0 text-muted-foreground"
-                    aria-hidden="true"
-                  />
+              <span className="flex w-full items-start justify-between gap-2">
+                <span className="text-sm font-medium leading-snug text-left break-words min-w-0">
+                  Understanding RAG: How Retrieval Augmented Generation Works
                 </span>
-                {/* Description */}
-                <span className="text-xs text-muted-foreground text-left leading-relaxed break-words">
-                  A step-by-step explanation of how AI retrieves relevant
-                  knowledge before generating answers
-                </span>
-              </Link>
+                <ArrowUpRight
+                  className="mt-0.5 size-4 shrink-0 text-muted-foreground"
+                  aria-hidden="true"
+                />
+              </span>
+              {/* Description */}
+              <span className="text-xs text-muted-foreground text-left leading-relaxed break-words">
+                A step-by-step explanation of how AI retrieves relevant
+                knowledge before generating answers
+              </span>
             </Button>
           </div>
           <h3 className="text-md mt-3 font-semibold">Latest Blogs</h3>

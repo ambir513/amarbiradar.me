@@ -24,6 +24,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         };
     });
 
+    const mdBlogPages = posts.results.map((page) => {
+        const post = parsePost(page);
+
+        return {
+            url: `${BASE_URL}/md/blog/${post.slug}`,
+            lastModified: post.lastModified,
+            changeFrequency: "monthly" as const,
+            priority: 0.4, // Lower than the HTML page
+        };
+    });
+
     return [
         {
             url: BASE_URL,
@@ -54,5 +65,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
 
         ...blogPages,
+        ...mdBlogPages,
     ];
 }

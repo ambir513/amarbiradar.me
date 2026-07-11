@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Viewport, Metadata } from "next";
 import Script from "next/script";
+import { AnchoredToastProvider, ToastProvider } from "@/components/ui/toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -137,7 +138,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TooltipProvider>{children}</TooltipProvider>
+          <ToastProvider timeout={3000}>
+            <AnchoredToastProvider>
+              <TooltipProvider>{children}</TooltipProvider>
+            </AnchoredToastProvider>
+          </ToastProvider>
         </ThemeProvider>
       </body>
     </html>

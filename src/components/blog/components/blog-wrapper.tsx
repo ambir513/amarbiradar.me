@@ -4,8 +4,53 @@ import { TOCMinimap } from "@/components/blog/components/toc-minimap";
 import { Header } from "@/components/landing/header";
 import Image from "next/image";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Badge } from "@/components/ui/badge";
-import { CalendarDays, Clock } from "lucide-react";
+import { CalendarDays, ChevronDown, Clock, Copy } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChatGPT, Claude } from "@/components/svg";
+import Link from "next/link";
+import { CopyLink } from "./copy-link";
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@/components/ui/button-group";
+
+type AIModel = "chatgpt" | "claude";
+
+export function getAISummaryUrl(model: AIModel, slug: string) {
+  const blogUrl = `https://amarbiradar.me/md/blog/${slug}`;
+
+  const prompt = `I'm reading this blog:
+
+${blogUrl}
+
+Please:
+
+1. Summarize it in 2-3 sentences.
+2. List the key takeaways.
+3. Explain the main topics.
+4. Mention the technologies or tools discussed.
+5. Suggest who would benefit from reading it.`;
+
+  const encoded = encodeURIComponent(prompt);
+
+  switch (model) {
+    case "claude":
+      return `https://claude.ai/new?q=${encoded}`;
+
+    default:
+      return `https://chatgpt.com/?q=${encoded}`;
+  }
+}
 
 export function BlogWrapper({
   markdown,
@@ -16,6 +61,7 @@ export function BlogWrapper({
   publishedDate,
   readTime,
   children,
+  slug,
 }: {
   markdown: string;
   cover: string;
@@ -24,6 +70,7 @@ export function BlogWrapper({
   category: string;
   publishedDate: string;
   readTime: string;
+  slug: string;
   children: React.ReactNode;
 }) {
   const toc = extractToc(markdown);
@@ -43,15 +90,57 @@ export function BlogWrapper({
             {description}
           </p>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground border-t pt-4">
-            <span className="flex items-center gap-1.5">
-              <CalendarDays className="size-4" />
-              {publishedDate}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Clock className="size-4" />
-              {readTime} min read
-            </span>
+          <div className="flex flex-wrap justify-between items-center gap-x-5 gap-y-2 border-t pt-4">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <CalendarDays className="size-4" />
+                {publishedDate}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock className="size-4" />
+                {readTime} min read
+              </span>
+            </div>
+            <ButtonGroup>
+              <CopyLink url={`https://amarbiradar.me/blog/${slug}`} />
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  render={<Button variant="outline" size="icon" />}
+                >
+                  <ChevronDown className="size-5" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-fit">
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem
+                      className="flex items-center gap-2"
+                      render={
+                        <Link
+                          href={getAISummaryUrl("chatgpt", slug)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <ChatGPT />
+                      <span>Open in ChatGPT</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="flex items-center gap-2"
+                      render={
+                        <Link
+                          href={getAISummaryUrl("claude", slug)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        />
+                      }
+                    >
+                      <Claude />
+                      <span>Open in Claude</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </ButtonGroup>
           </div>
         </div>
 

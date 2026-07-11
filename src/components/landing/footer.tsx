@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   Github,
   Instagram,
@@ -89,7 +88,7 @@ export function Footer() {
             {/* Social icons */}
             <div className="flex gap-1 pt-1">
               {SOCIAL_LINKS.map((social) => (
-                <Link
+                <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
@@ -98,7 +97,7 @@ export function Footer() {
                   className="group rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   <social.icon className="size-4 transition-transform group-hover:scale-110" />
-                </Link>
+                </a>
               ))}
             </div>
           </div>
@@ -116,12 +115,12 @@ export function Footer() {
                 <ul className="flex flex-col items-center gap-2.5 sm:items-start">
                   {group.category.map((link) => (
                     <li key={link.name}>
-                      <Link
+                      <a
                         href={link.href}
                         className="text-sm text-foreground/70 transition-colors hover:text-primary"
                       >
                         {link.name}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>

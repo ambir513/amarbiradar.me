@@ -6,6 +6,8 @@ import { Button } from "../ui/button";
 import { ChevronLeft, CornerLeftDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 // Types
 
@@ -65,20 +67,17 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full backdrop-blur-md border-b border-border/40">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-end gap-4 px-4">
         <nav aria-label="Site navigation">
-          {isResumePage ? (
-            <Button variant="secondary">
-              <Link href="/" className="flex items-center gap-1">
-                <ChevronLeft />
-                <span>Back to Portfolio</span>
-              </Link>
-            </Button>
-          ) : isBlogPage ? (
-            <Button variant="secondary">
-              <Link href="/" className="flex items-center gap-1">
-                <ChevronLeft />
-                <span>Back to Portfolio</span>
-              </Link>
-            </Button>
+          {isResumePage || isBlogPage ? (
+            <Link
+              href="/"
+              className={cn(
+                "flex items-center gap-1",
+                buttonVariants({ variant: "secondary" }),
+              )}
+            >
+              <ChevronLeft />
+              <span>Back to Portfolio</span>
+            </Link>
           ) : (
             <ul className="flex items-center gap-1">
               {NAV_LINKS.map((link) => (

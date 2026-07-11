@@ -540,9 +540,9 @@ function ToolbarTooltip({
 }) {
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <span className="inline-flex">{children}</span>
-      </TooltipTrigger>
+      <TooltipTrigger
+        render={<span className="inline-flex">{children}</span>}
+      ></TooltipTrigger>
       <TooltipContent side="bottom">{label}</TooltipContent>
     </Tooltip>
   );
@@ -587,16 +587,20 @@ function PDFViewerFileActionsMenu({
         />
       ) : null}
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon-sm"
-            aria-label="Open PDF actions"
-          >
-            <HugeiconsIcon icon={MoreHorizontalIcon} className="size-4" />
-          </Button>
-        </DropdownMenuTrigger>
+        <DropdownMenuTrigger
+          render={
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon-sm"
+              aria-label="Open PDF actions"
+              nativeButton={false}
+              render={
+                <HugeiconsIcon icon={MoreHorizontalIcon} className="size-4" />
+              }
+            />
+          }
+        ></DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-40">
           {showDownload && onDownload ? (
             <DropdownMenuItem disabled={downloadDisabled} onClick={onDownload}>

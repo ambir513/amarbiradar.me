@@ -1,5 +1,5 @@
 // credit : https://chanhdai.com/components/toc-minimap
-// Thank You Chandu Bhai!!! 
+// Thank You Chandu Bhai!!
 
 "use client";
 

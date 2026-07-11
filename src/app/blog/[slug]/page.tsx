@@ -146,6 +146,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
 
     other: {
+      "ai:mdx": `https://amarbiradar.me/md/blog/${meta.slug}`,
       "article:published_time": meta.publishedTime,
       "article:modified_time": meta.lastModified,
       "article:section": meta.category,
@@ -323,6 +324,7 @@ export default async function BlogPage({ params }: Props) {
         publishedDate={meta.publishedDate}
         description={meta.description}
         readTime={meta.timeToRead}
+        slug={meta.slug}
       >
         <MDXRemote source={markdown} components={components} />
       </BlogWrapper>

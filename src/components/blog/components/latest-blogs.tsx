@@ -25,22 +25,23 @@ export default async function LatestBlogs() {
           key={blog.slug}
           variant="secondary"
           className="h-fit w-full justify-start px-4 py-3"
-          asChild
+          nativeButton={false}
+          render={
+            <Link
+              href={`/blog/${blog.slug}`}
+              className="flex flex-col gap-1 items-start"
+            />
+          }
         >
-          <Link
-            href={`/blog/${blog.slug}`}
-            className="flex flex-col gap-1 items-start"
-          >
-            <div className="flex w-full items-start justify-between">
-              <span className="font-medium">{blog.title}</span>
+          <div className="flex w-full items-start justify-between">
+            <span className="font-medium">{blog.title}</span>
 
-              <ArrowUpRight className="size-4 shrink-0 opacity-50" />
-            </div>
+            <ArrowUpRight className="size-4 shrink-0 opacity-50" />
+          </div>
 
-            <span className="text-xs text-muted-foreground">
-              {truncate(blog.description, 40)}
-            </span>
-          </Link>
+          <span className="text-xs text-muted-foreground">
+            {truncate(blog.description, 40)}
+          </span>
         </Button>
       ))}
     </div>

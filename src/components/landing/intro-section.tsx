@@ -3,13 +3,14 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Github, LinkedIn, Discord, X } from "@/components/svg";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import { FileText, Mail } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
 const SOCIAL_LINKS = [
   {
@@ -65,24 +66,25 @@ export function IntroSection() {
       <div className="flex gap-4">
         {SOCIAL_LINKS.map((link) => (
           <Tooltip key={link.label}>
-            <TooltipTrigger asChild>
-              <Button
-                key={link.label}
-                variant="outline"
-                size="icon-lg"
-                className="p-1"
-                asChild
-              >
-                <Link
+            <TooltipTrigger
+              render={
+                <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                >
-                  <link.icon />{" "}
-                </Link>
-              </Button>
+                  className={cn(
+                    "p-1",
+                    buttonVariants({
+                      variant: "outline",
+                      size: "icon-lg",
+                    }),
+                  )}
+                />
+              }
+            >
+              <link.icon />
             </TooltipTrigger>
             <TooltipContent>
               <p>{link.label}</p>
