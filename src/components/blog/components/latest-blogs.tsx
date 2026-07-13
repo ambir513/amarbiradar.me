@@ -15,8 +15,10 @@ const truncate = (text: string, maxLength = 80) => {
 
 export default async function LatestBlogs() {
   const response = await getPosts();
+  console.log(response)
 
   const blogs = response.results.map(parsePost).slice(0, 3);
+  console.log(blogs)
 
   return (
     <div className="flex flex-col gap-2 w-full">

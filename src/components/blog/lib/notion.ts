@@ -16,30 +16,49 @@ const n2m = new NotionToMarkdown({
 /**
  * Get all published blog posts
  */
-export const getPosts = unstable_cache(
-    async () => {
-        return notion.dataSources.query({
-            data_source_id: databaseId,
-            filter: {
-                property: "Status",
-                status: {
-                    equals: "Published",
+export const getPosts =
+    process.env.NODE_ENV === "development" ?
+        async () => {
+            return notion.dataSources.query({
+                data_source_id: databaseId,
+                filter: {
+                    property: "Status",
+                    status: {
+                        equals: "Published",
+                    },
                 },
+                sorts: [
+                    {
+                        property: "Published Date",
+                        direction: "descending",
+                    },
+                ],
+            });
+        } :
+        unstable_cache(
+            async () => {
+                return notion.dataSources.query({
+                    data_source_id: databaseId,
+                    filter: {
+                        property: "Status",
+                        status: {
+                            equals: "Published",
+                        },
+                    },
+                    sorts: [
+                        {
+                            property: "Published Date",
+                            direction: "descending",
+                        },
+                    ],
+                });
             },
-            sorts: [
-                {
-                    property: "Published Date",
-                    direction: "descending",
-                },
-            ],
-        });
-    },
-    ["notion-posts"],
-    {
-        revalidate: 3600, // 1 hour
-        tags: ["posts"],
-    }
-);
+            ["notion-posts"],
+            {
+                revalidate: 3600,
+                tags: ["posts"],
+            }
+        );
 
 /**
  * Get Notion blocks

@@ -23,6 +23,7 @@ import {
   ButtonGroupSeparator,
   ButtonGroupText,
 } from "@/components/ui/button-group";
+import { ScrollProgress } from "./scroll-progress";
 
 type AIModel = "chatgpt" | "claude";
 
@@ -74,6 +75,15 @@ export function BlogWrapper({
   children: React.ReactNode;
 }) {
   const toc = extractToc(markdown);
+  const sections = React.useMemo(
+    () =>
+      toc.map((item) => ({
+        id: item.id,
+        label: item.text, // or whatever field name your TocItem actually uses
+        depth: Math.max(0, item.level - 2), // h2 → 0, h3 → 1, h4 → 2...
+      })),
+    [toc],
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -159,14 +169,18 @@ export function BlogWrapper({
         </AspectRatio>
 
         {/* Article body */}
-        <article className="prose prose-neutral dark:prose-invert max-w-none">
+        <article className="prose prose-neutral dark:prose-invert max-w-none my-5">
           {children}
         </article>
       </div>
 
       <TOCMinimap
         items={toTOCMinimapItems(toc)}
-        className="hidden sm:block fixed top-1/3 right-0"
+        className="hidden lg:block fixed top-1/3 right-0"
+      />
+      <ScrollProgress
+        sections={sections}
+        className="lg:hidden fixed bottom-0 mb-5"
       />
     </div>
   );
