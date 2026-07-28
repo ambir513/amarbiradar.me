@@ -1,5 +1,21 @@
 {
   "experience": [
+       {
+      "company": "Flextenure Private Limited",
+      "role": "Backend Developer Intern",
+      "startDate": "Jul 2026",
+      "endDate": "Jan 2027",
+      "duration": "6 months",
+      "location": "Pune, India (Remote)",
+      "image": "https://media.licdn.com/dms/image/v2/D4D0BAQGzSUcnN5jjIg/company-logo_200_200/B4DZ9.nfHQGkAE-/0/1784535708336/flextenure_solutions_pvt_ltd_logo?e=1786579200&v=beta&t=JQX4fMomiyusaml8RWZPXHkVr8UuTaOLj01pJ-L-eVs",
+      "description": [
+         {
+          "point": "just joined :)"
+        },
+      ],
+      "tech_stack": [
+      ]
+    },
     {
       "company": "Freelancing",
       "role": "Full Stack (SaaS, MVP) Developer",
@@ -59,7 +75,7 @@
       "endDate": "Jan 2026",
       "duration": "3 months",
       "location": "Mumbai, India (On-Site)",
-      "image": "https://media.licdn.com/dms/image/v2/D560BAQEKvzWWZov4gw/company-logo_200_200/B56ZWzGKyXGoAI-/0/1742466494132?e=1783555200&v=beta&t=iQK6FkQ__m4bvxe4nWgXh1aqmt_TFhViwDaUALu7egI",
+      "image": "https://media.licdn.com/dms/image/v2/D560BAQEKvzWWZov4gw/company-logo_200_200/B56ZWzGKyXGoAI-/0/1742466494132?e=1786579200&v=beta&t=ZqGQPuF4MQkeNQtVmkD_95VjWCpU5utch8yKL3n39jo",
       "description": [
         {
           "point": "Developed and maintained full-stack web applications using the MERN stack, improving application performance and user experience."
