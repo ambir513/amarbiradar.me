@@ -5,7 +5,7 @@ import {
     parsePost,
 } from "@/components/blog/lib/notion";
 
-const BASE_URL = "https://amarbiradar.me";
+const BASE_URL = "https://amarbiradar.me";  
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const posts = await getPosts();

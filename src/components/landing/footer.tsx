@@ -15,7 +15,7 @@ const FOOTER_LINKS = [
     category: [
       { name: "ambir513@sbi", href: "upi://pay?pa=ambir513@sbi" },
       { name: "Paypal", href: "https://paypal.me/AmarBiradar871" },
-      { name: "Razorpay", href: "https://razorpay.me/@amarbiradar" },
+      { name: "Razorpay", href: "https://razorpay.me/@ambir513" },
     ],
   },
   {
@@ -116,6 +116,8 @@ export function Footer() {
                   {group.category.map((link) => (
                     <li key={link.name}>
                       <a
+                        target="_blank"
+                        rel="noopener noreferrer"
                         href={link.href}
                         className="text-sm text-foreground/70 transition-colors hover:text-primary"
                       >
